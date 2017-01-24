@@ -10,18 +10,14 @@ if (!isset($_COOKIE['key'])) {
     header("Location: " . dirname($_SERVER['PHP_SELF']) . "/login.php");
 
 }
-ob_start();
 
 ?>
+
 <form method="post">
     <button name="sign_out" type="submit" class="btn btn-default">Sign out</button>
 </form>
+
 <?php
-
-$signOut = ob_get_contents();
-ob_end_clean();
-
-echo $signOut;
 
 if (isset($_POST['sign_out'])) {
     if (isset($_COOKIE['key'])) {

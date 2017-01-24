@@ -10,28 +10,28 @@ if (isset($_POST['sign_in'])) {
 ?>
 <form action="<?= $_SERVER['PHP_SELF']; ?>/" method="post" class="form-horizontal">
     <div class="form-group">
-        <label for="inputLogin" class="col-sm-2 control-label">Login</label>
+        <label for="inputLogin" class="control-label">Login</label>
 
-        <div class="col-sm-10">
+        <div>
             <input type="text" class="form-control" id="inputLogin" placeholder="Login" required>
         </div>
     </div>
     <div class="form-group">
-        <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+        <label for="inputEmail" class="control-label">Email</label>
 
-        <div class="col-sm-10">
+        <div>
             <input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
         </div>
     </div>
     <div class="form-group">
-        <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+        <label for="inputPassword" class="control-label">Password</label>
 
-        <div class="col-sm-10">
+        <div>
             <input type="password" class="form-control" id="inputPassword" placeholder="Password" required>
         </div>
     </div>
     <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
+        <div>
             <button name="sign_in" type="submit" class="btn btn-default">Sign in</button>
         </div>
     </div>

@@ -22,8 +22,10 @@
             <form action="<?= dirname($_SERVER['PHP_SELF']); ?>/" method="post" class="form-horizontal">
                 <div class="form-group">
                     <label for="inputPhone">Phone</label>
-                    <div >
-                        <input type="tel" name="phone" class="form-control" id="inputPhone" placeholder="Phone" required>
+
+                    <div>
+                        <input type="tel" name="phone" class="form-control" id="inputPhone" placeholder="Phone"
+                               required>
                     </div>
                 </div>
                 <div class="form-group">
@@ -43,19 +45,23 @@
             <form class="form-horizontal">
                 <div class="form-group">
                     <label for="inputPhone">Phone</label>
-                    <div >
-                        <input type="tel" class="form-control" id="inputPhone" placeholder="Phone" value="%%" required>
+
+                    <div>
+                        <input type="tel" class="form-control" id="inputPhone" placeholder="Phone"
+                               value="<?= $_COOKIE['phone']; ?>" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputName">Name</label>
-                    <div >
+
+                    <div>
                         <input type="text" class="form-control" id="inputName" placeholder="Name" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputSurname">Surname</label>
-                    <div >
+
+                    <div>
                         <input type="text" class="form-control" id="inputSurname" placeholder="Surname" required>
                     </div>
                 </div>
@@ -64,14 +70,13 @@
             <?php
 
             $form = ob_get_contents();
-            $form = (str_replace("%%", $_COOKIE['phone'], $form));
             ob_end_clean();
 
             echo (!isset($_COOKIE['phone'])) ? $phone : $form;
 
 
             if (isset($_POST['send_tel'])) {
-                setcookie("phone", $_POST['phone'],null, "/");
+                setcookie("phone", $_POST['phone'], null, "/");
                 header("Location: " . dirname($_SERVER['PHP_SELF']) . "/");
             }
 
