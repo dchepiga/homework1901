@@ -17,10 +17,9 @@ foreach ($statContent as $key => &$stat) {
 $statContent = serialize($statContent);
 file_put_contents($statisticFile, $statContent);
 
-
 if (file_exists($fileName)) {
     header('Content-Description: File Transfer');
-    header('Content-Type: application/octet-stream');
+    header('Content-Type: '.getimagesize($fileName)['mime']);
     header('Content-Disposition: attachment; filename="' . basename($fileName) . '"');
     header('Expires: 0');
     header('Cache-Control: must-revalidate');
